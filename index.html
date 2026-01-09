@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trax Editor v4 DEMO</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="toolbar">
+            <button id="add-channel-btn">Add Channel</button>
+            <button id="play-btn">Play</button>
+            <button id="stop-btn">Stop</button>
+
+            <div class="module-editor">
+                <div>
+                    <label>Mode:</label>
+                    <select id="mode-selector">
+                        <option value="place" selected>Place</option>
+                        <option value="remove">Remove</option>
+                        <option value="eyedropper">Eyedropper</option>
+                        <option value="fill">Fill</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Color:</label>
+                    <div class="color-selector" id="color-selector"></div>
+                </div>
+
+                <div>
+                    <label>Symbol:</label>
+                    <div class="symbol-selector" id="symbol-selector"></div>
+                </div>
+
+                <div class="length-selector">
+                    <label>Length:</label>
+                    <select id="length-selector">
+                        <option value="1">1 bar</option>
+                        <option value="2" selected>2 bars</option>
+                        <option value="3">3 bars</option>
+                        <option value="4">4 bars</option>
+                        <option value="5">5 bars</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Preview:</label>
+                    <div class="module-preview" id="module-preview"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-container">
+            <trax-timeline id="timeline"></trax-timeline>
+        </div>
+    </div>
+
+    <ul>
+        <li>Click: Place module</li>
+        <li>Ctrl+Click: Remove module</li>
+        <li>Right-click: Eyedropper (copy module type)</li>
+        <li>Alt+Click: Fill area with selected module (respects view bounds and existing modules)</li>
+    </ul>
+
+    <script src="static/main.js"></script>
+</body>
+</html>
